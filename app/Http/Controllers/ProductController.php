@@ -29,7 +29,17 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //menyimpan data:
+        $request->validate(
+            [
+                'nama_barang' => 'required',
+                'harga' => 'required|numeric',
+                'stok' => 'required|numeric',
+                'deskripsi' => 'nullable',
+            ]
+        );
+        \App\Models\Product::create($request->all());
+        return redirect()->route('products.index')->with('success', 'barang berhasil di tambahkan.');
     }
 
     /**
