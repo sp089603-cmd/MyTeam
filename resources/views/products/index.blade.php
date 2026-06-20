@@ -6,10 +6,19 @@
 </head>
 <body class="p-4">
     @include('navbar')
+    <div class="flex gap-2 mb-5">
     <button onclick="toggle_model()"
         class="bg-blue-500 text-white px-4 py-2 rounded-2xl">
         + Tambah Item
     </button>
+
+    <a href="{{ route('products.pdf') }}"
+       class="bg-red-500 text-white px-4 py-2 rounded-2xl font-medium flex items-center gap-1 hover:bg-red-700 transition">
+        <span class="material-icons text-sm">picture_as_pdf</span>
+        <span>Simpan Sebagai PDF</span>
+    </a>
+</div>
+    
 
     <table class="table-auto w-full mt-5">
         <thead>
